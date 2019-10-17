@@ -1,0 +1,10 @@
+python/setup:
+    pipenv install --dev
+
+install/cli: clean
+    python setup.py install
+
+clean:
+    rm -rf dist/
+    rm -rf build/
+    rm -rf binman.egg-info
