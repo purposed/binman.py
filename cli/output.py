@@ -1,4 +1,4 @@
-from colorama import init, Fore, Back, Style
+from colorama import Back, Fore, Style, init
 
 init()
 
@@ -12,7 +12,7 @@ class OutputManager:
         if padding > 0:
             pad = "|" + "  " * padding
 
-        print(color + f"{pad}{prefix_marker} {message}" + Style.RESET_ALL)
+        print(pad + color + f"{prefix_marker} {message}" + Style.RESET_ALL)
 
     def step(self, message: str, prefix_marker: str = "+", padding: int = 0) -> None:
         self._msg(message, prefix_marker, Fore.YELLOW, padding)
@@ -29,4 +29,3 @@ class OutputManager:
 
     def error(self, message: str, prefix_marker: str = "!", padding: int = 0) -> None:
         self._msg(message, prefix_marker, Fore.RED, padding)
-

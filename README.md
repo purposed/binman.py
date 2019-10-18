@@ -4,7 +4,12 @@
 
 ### Installing Software
 ```bash
-$ binman install [-v] github.com/purposed/tidy [--version VERSION]
+$ binman install [-v] PACKAGE_PATH [--version VERSION]
+```
+
+### Getting info on some software
+```bash
+$ binman info [-v] PACKAGE_PATH
 ```
 
 ### Updating Software

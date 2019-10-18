@@ -1,3 +1,5 @@
+from github import Repository
+
 from .output import OutputManager
 
 
@@ -20,6 +22,16 @@ class Installer:
         try:
             name_or_path = self._validate_and_expand_path(name_or_path)
             self.log.step(f"Installing from {name_or_path}@{version}")
+
+            repo = Repository.from_url(name_or_path)
+            for release in repo.list_releases():
+                self.log.step(release["tag_name"], padding=1)
+                for artifact in release["assets"]:
+                    print(artifact.keys())
+                    self.log.progress(
+                        artifact["name"] + " - " + artifact["browser_download_url"],
+                        padding=2,
+                    )
 
         except Exception as e:
             self.log.error(f"{type(e).__name__}: {e}.")
