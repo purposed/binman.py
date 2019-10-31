@@ -27,6 +27,6 @@ setup(
     version=get_version(),
     packages=find_packages(),
     description="Purposed-format binary application manager",
-    entry_points={"console_scripts": ["binman=cli.main:main"]},
+    entry_points={"console_scripts": ["binman=binman.main:cli"]},
     install_requires=get_requirements(),
 )

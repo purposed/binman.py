@@ -15,6 +15,5 @@ class Release:
     @classmethod
     def from_json(cls, release_json: Dict[str, Any]) -> "Release":
         return cls(
-            release_json["tag_name"],
-            assets=[Asset.from_json(asst_json) for asst_json in release_json["assets"]],
+            release_json["tag_name"], assets=[Asset.from_json(asst_json) for asst_json in release_json["assets"]]
         )

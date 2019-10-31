@@ -14,9 +14,7 @@ class Asset:
         self.architecture = architecture
         self.download_url = download_url
 
-    def download(
-        self, target_dir: Path, new_filename: str = None, executable: bool = True
-    ) -> None:
+    def download(self, target_dir: Path, new_filename: str = None, executable: bool = True) -> None:
         tgt = target_dir / (new_filename or self.name)
         resp = requests.get(self.download_url)
         with open(tgt, "wb") as outfile:
@@ -28,8 +26,4 @@ class Asset:
 
     @classmethod
     def from_json(cls, asset_json: Dict[str, Any]) -> "Asset":
-        return cls(
-            name=asset_json["name"],
-            download_url=asset_json["browser_download_url"],
-            size=asset_json["size"],
-        )
+        return cls(name=asset_json["name"], download_url=asset_json["browser_download_url"], size=asset_json["size"])
