@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Any, Dict
 
 _DEFAULT_CFG_DIR = Path("~").expanduser() / ".config" / "purposed" / "binman"
-_DEFAULT_CFG_DIR.mkdir(exist_ok=True)
+_DEFAULT_CFG_DIR.mkdir(exist_ok=True, parents=True)
 _DEFAULT_CFG_PATH = _DEFAULT_CFG_DIR / "config.json"
 
 

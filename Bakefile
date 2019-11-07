@@ -8,3 +8,7 @@ clean:
     rm -rf dist/
     rm -rf build/
     rm -rf binman.egg-info
+
+deploy: @confirm
+    pipenv run python setup.py sdist bdist_wheel
+    pipenv run twine upload dist/*
