@@ -4,6 +4,20 @@
 
 Binman is a lightweight tool for installing binaries provided in Github releases.
 
+## Installation
+### Via pip
+```bash
+pip install binman
+```
+
+### Manually
+```bash
+$ git clone git@github.com:purposed/binman.git
+$ cd binman
+$ pipenv install
+$ pipenv run python setup.py
+```
+
 ## Configuration
 Binman's configuration file is located at `~/.config/purposed/binman/config.json`.
 
